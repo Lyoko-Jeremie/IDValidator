@@ -96,21 +96,15 @@
             }
             var outAddress = "";
             var tmpAddress = addr.slice(0, 2) + '0000';
-            console.log(tmpAddress);
             if (!GB2260.hasOwnProperty(tmpAddress)) {
                 return '未知地区';
             } else {
                 outAddress = outAddress + GB2260[tmpAddress];
-                console.log(GB2260[tmpAddress]);
                 tmpAddress = addr.slice(0, 4) + '00';
-                console.log(tmpAddress);
                 if (GB2260.hasOwnProperty(tmpAddress)) {
                     outAddress = outAddress + GB2260[tmpAddress];
-                    console.log(GB2260[tmpAddress]);
                     tmpAddress = addr;
-                    console.log(tmpAddress);
                     if (GB2260.hasOwnProperty(tmpAddress)) {
-                        console.log(GB2260[tmpAddress]);
                         outAddress = outAddress + GB2260[tmpAddress];
                     }
                 }
